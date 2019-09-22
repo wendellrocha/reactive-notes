@@ -1,3 +1,10 @@
 <template name="master">
-  {{> Template.dynamic template=main}}
+  <div id="app">
+    <div class="view view-main">
+      {{>navbar}}
+      {{#momentum plugin='flow-router'}}
+      {{> Template.dynamic template=page}}
+      {{/momentum}}
+    </div>
+  </div>
 </template>
