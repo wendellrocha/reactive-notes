@@ -7,15 +7,26 @@ import '../../ui/pages/home/home.js';
 import '../../ui/pages/not-found/not-found.js';
 
 // Set up all routes in the app
-FlowRouter.route('/', {
+const app = FlowRouter.group({
+  triggersEnter: [function () {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 1200);
+  }]
+})
+
+app.route('/', {
   name: 'Reactive Notes',
-  action() {
-    BlazeLayout.render('master', { main: 'home' });
+  titulo: 'Notes',
+  action: function () {
+    BlazeLayout.render('master', {
+      page: 'home'
+    });
   },
 });
 
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('master', { main: 'notFound' });
+    BlazeLayout.render('master', { page: 'notFound' });
   },
 };

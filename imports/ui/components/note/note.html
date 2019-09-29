@@ -1,1 +1,8 @@
-<template name="note"></template>
+<template name="note">
+    <div class="card card-header" style="background-color: '{{note.background_color}}'">{{note.title}}</div>
+    <div class="card-content card-content-padding">{{note.content}}</div>
+    <div class="card-footer">
+        <div class="left">Created at: {{note.createdAt}}</div>
+        <div class="right">Modified at: {{note.modifiedAt}}</div>
+    </div>
+</template>

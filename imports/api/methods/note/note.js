@@ -4,6 +4,13 @@ import { check } from 'meteor/check';
 import '../../collections/note/note.js';
 
 Meteor.methods({
+    /**
+     * 
+     * @param {*} personId 
+     * @param {*} title 
+     * @param {*} content 
+     * @param {*} background_color 
+     */
     addNote(personId, title, content, background_color) {
         if (this.userId) {
             try {
@@ -27,6 +34,10 @@ Meteor.methods({
         }
     },
 
+    /**
+     * 
+     * @param {*} doc 
+     */
     updateNote(doc) {
         if (this.userId) {
             try {
@@ -43,6 +54,10 @@ Meteor.methods({
         }
     },
 
+    /**
+     * 
+     * @param {*} doc 
+     */
     removeNote(doc) {
         if (this.userId) {
             try {

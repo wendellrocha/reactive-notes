@@ -50,7 +50,7 @@ note.attachSchema(new SimpleSchema({
 if (Meteor.isServer) {
     Meteor.publish('Notes', function (id) {
         if (id) {
-            return note.find({ _id: id });
+            return note.find({ userId: id });
         } else {
             return note.find({});
         }

@@ -1,3 +1,55 @@
 <template name="home">
-    
+    <div class="page">
+        <div class="page-content">
+            <!-- Popup for add notes -->
+            <div class="popup notes-add">
+                <div class="toolbar bg-theme-color">
+                    <div class="toolbar-inner">
+                        <div class="left padding-left">Note</div>
+                        <div class="right">
+                            <a class="link popup-close color-red" href="#" aria-label="Close">
+                                <i class="f7-icons">close</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <form id="notesAdd" class="list">
+                    <ul>
+                        <li>
+                            <div class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Title</div>
+                                    <div class="item-input-wrap">
+                                        <input type="text" name="title" placeholder="Title">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content item-input">
+                                <div class="item-inner">
+                                    <div class="item-title item-label">Content</div>
+                                    <div class="item-input-wrap">
+                                        <textarea name="content" rows="2" placeholder="Content" required></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="block block-strong row">
+                        <button type="submit" class="button button-fill btn-color-primary">Add</button>
+                    </div>
+                </form>
+            </div>
+            <!-- ./Popup for add notes -->
+        </div>
+
+        <div class="fab fab-right-bottom color-green">
+            <a href="#" class="link external addNote">
+                <i class="f7-icons">
+                    add
+                </i>
+            </a>
+        </div>
+    </div>
 </template>

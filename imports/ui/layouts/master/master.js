@@ -3,7 +3,6 @@ import './master.html';
 import '../../components/navbar/navbar.js';
 
 Template.master.onRendered(() => {
-
     app = new Framework7({
         root: '#app',
         router: false,
@@ -24,4 +23,44 @@ Template.master.onRendered(() => {
         master: true,
         reloadDetail: true
     });
+
+    toast = function (msg) {
+        let mensagem;
+        let css;
+        if (msg == '' || msg == null) {
+            css = 'sucess';
+            mensagem = 'Feito!';
+        } else {
+            css = 'error';
+            mensagem = msg.message;
+        }
+
+        var toa = app.toast.create({
+            closeButtonColor: 'white',
+            cssClass: css,
+            text: mensagem,
+            closeTimeout: 3000,
+        });
+
+        toa.open();
+    };toast = function (msg) {
+        let mensagem;
+        let css;
+        if (msg == '' || msg == null) {
+            css = 'sucess';
+            mensagem = 'Feito!';
+        } else {
+            css = 'error';
+            mensagem = msg.message;
+        }
+
+        var toa = app.toast.create({
+            closeButtonColor: 'white',
+            cssClass: css,
+            text: mensagem,
+            closeTimeout: 3000,
+        });
+
+        toa.open();
+    };
 });
